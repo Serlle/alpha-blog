@@ -1,0 +1,76 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+	.navbar {
+		background-color: white !important;
+	}
+
+	.nav-link {
+		color: black !important;
+	}
+
+	#logo {
+		float: left;
+		font-size: 1.7em;
+		color: black;
+		text-transform: uppercase;
+		letter-spacing: -1px;
+		font-weight: bold;
+	}
+
+	#home-container {
+		margin: 133px;
+    margin-top: 131px;
+	}
+
+	#col-custom {
+		background-image: asset-url('carajillo.png');
+    background-position: center -15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    border-radius: 25px;
+	}
+
+  .main-title span {
+    position: relative;
+    background-image: radial-gradient(circle closest-corner at 50% 50%,#0084d4,#76d7f0 36%,#47dfcd 64%,#0084d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+  }
+
+	/* Sticky Footer Classes */
+	
+	html, body {
+		height: 100%;
+	}
+
+	#page-content {
+		flex: 1 0 auto;
+		background: white;
+	}
+
+  footer {
+    background-color: #111212;
+  }
+  .text-gray-footer {
+    color: #969696;
+  }
+
+  /* Marquee */
+
+  .marquee { overflow: hidden; }
+
+  div.marquee--inner {
+    position: relative;
+    animation-name: marquee;
+    animation-duration: 1.5s; 
+    animation-timing-function: steps(1s, end);
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes marquee {
+    from { left: -120%; }
+    to { left: 0%; }
+  }

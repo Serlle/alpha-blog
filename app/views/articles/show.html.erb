@@ -1,7 +1,32 @@
-<h1>Showing article details</h1>
-<p><strong>Title: </strong> <%= @article.title %> </p>
-<p><strong>Description: </strong> <%= @article.description %> </p>
+  <h1 class= "text-center text-black m-4">Showing article details</h1>
+  <div class= "container marquee">
+    <div class="accordion marquee--inner">
+      <div class="card shadow">
+        <div class="card-header">
+          <div class="row m-1">
+            <div class="col text-left">
+              <h5 class="mb-1 text-capitalize"><%= @article.title%></h5>
+            </div>
+            <div class="col text-right">
+              <small class="font-weight-lighter">Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago </small>
+            </div>
+          </div>
 
-<%= link_to "Edit", edit_article_path(@article) %> |
-<%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %> |
-<%= link_to "Return to articles listing", articles_path %>
+          <div class="row m-1 mt-2">
+            <div class="col text-left">
+              <%= link_to "Edit", edit_article_path(@article)%> |  
+              <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %> | 
+              <%= link_to "Return to articles listing", articles_path %>
+            </div>
+            <div class="col text-right">
+              <small class="font-weight-lighter">By Serlle Rosales</small>
+            </div>
+          </div>		
+        </div>
+
+        <div class="card-body ml-5">
+          <%= simple_format(@article.description.capitalize)%>
+        </div>
+      </div>
+    </div>
+  </div>
