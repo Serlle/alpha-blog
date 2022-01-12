@@ -19,7 +19,7 @@
               <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
             <div class="col text-right">
-              <small class="font-weight-lighter">By Serlle Rosales</small>
+              <small class="font-weight-lighter">By <%= article.user.username %></small>
             </div>
           </div>		
         </div>
