@@ -1,0 +1,35 @@
+<div class="container marquee">
+  <div class="box-sign_up marquee--inner">
+    <div class="row rounded-lg shadow justify-content-end">
+      <div class="col m-4 text-center">
+        <%= render 'shared/errors', obj: @user %>
+        <%= form_with model: @user, class: "text-left", local: true do |f| %>
+          <div class="form-group">
+            <%= f.label :username, class: "col-form-label"%>
+            <%= f.text_field :username, class: "form-control", type:"text" %> 
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email, class: "col-form-label" %>
+            <%= f.email_field :email, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password, class: " col-form-label" %>
+            <%= f.password_field :password, class: "form-control" %> 
+            <small class="form-text text-muted">Must contain 8+ characters with at least 1 number.</small>
+          </div>
+
+          <div class="form-group row justify-content-center">
+            <%= f.submit class: "btn btn-success btn-lg__custom btn-block" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <br>
+    <div class="mb-5 text-center">
+      <%= link_to "[Cancel]", root_path, class: "text-info" %>
+    </div>
+  </div>
+</div>
+
