@@ -22,7 +22,7 @@
     margin-top: 131px;
 	}
 
-	#col-custom {
+	#img-custom__home {
 		background-image: asset-url('carajillo.png');
     background-position: center -15px;
     background-repeat: no-repeat;
@@ -38,6 +38,10 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 300% 300%;
+  }
+
+  .accordion {
+    margin-block-end: 30px;
   }
 
 	/* Sticky Footer Classes */
@@ -73,4 +77,34 @@
   @keyframes marquee {
     from { left: -120%; }
     to { left: 0%; }
+  }
+
+  /* form sign up */
+
+  .separator-vertical__left {
+      box-shadow: -0.1rem 0 0 0 #ececec;
+      padding-left: 4rem;
+      flex: 1;
+  }
+
+  .box-sign_up {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-block-end: 30px;
+  }
+
+  .rounded-lg {
+    border-radius: 1rem !important;
+  }
+
+  .btn-lg__custom {
+    padding: 0.5rem 1rem;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    border-radius: 1.5rem;
+    margin: 16px;
+    margin-block-end: -5px;
   }
