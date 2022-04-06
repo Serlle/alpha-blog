@@ -1,8 +1,8 @@
 <div class="container marquee">
+<%= render 'shared/errors', obj: @user %>
   <div class="box-sign_up marquee--inner">
     <div class="row rounded-lg shadow justify-content-end">
       <div class="col m-4 text-center">
-        <%= render 'shared/errors', obj: @user %>
         <%= form_with model: @user, class: "text-left", local: true do |f| %>
           <div class="form-group">
             <%= f.label :username, class: "col-form-label"%>
@@ -21,7 +21,7 @@
           </div>
 
           <div class="form-group row justify-content-center">
-            <%= f.submit class: "btn btn-success btn-lg__custom btn-block" %>
+            <%= f.submit "Sign up", class: "btn btn-success btn-lg__custom btn-block" %>
           </div>
         <% end %>
       </div>
