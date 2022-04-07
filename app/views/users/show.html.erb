@@ -1,0 +1,4 @@
+<h1 class= "text-center font-weight-bold m-4"><%= @user.username %>'s Profile</h1>
+<%= gravatar_for(@user, size: 150) %> <!-- El estilo va dentro del helper --> <br>
+<h3 class="text-center mt-4">Articles</h3> <br>
+<%= render 'articles/article' %>
