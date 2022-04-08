@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find(params[:id])
+    @article = @user.articles
+  end
+
+  def index
+    @users = User.all
+  end
+  
   def new
     @user = User.new
   end
@@ -25,11 +34,6 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def show
-    @user = User.find(params[:id])
-    @article = @user.articles
   end
 
   private
