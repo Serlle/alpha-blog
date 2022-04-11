@@ -1,30 +1,37 @@
-  <h1 class= "text-center font-weight-bold m-4">Showing article details</h1>
+  <h1 class= "text-center font-weight-bold m-4">Showing article details</h1> <br>
   <div class= "container marquee">
     <div class="accordion marquee--inner">
       <div class="card shadow">
         <div class="card-header">
-          <div class="row m-1">
-            <div class="col text-left">
-              <h5 class="mb-1 text-capitalize"><%= @article.title%></h5>
+          <div class="media">
+            <div class="d-flex flex-column">
+              <div class="text-center ml-2 mt-1"><%= link_to gravatar_for(@article.user, size: 50), user_path(@article.user) %></div>
+              <div class="text-center ml-2 mt-1">
+                <small class="font-weight-lighter">
+                  <%= link_to @article.user.username, user_path(@article.user) %>
+                </small>
+              </div>
             </div>
-            <div class="col text-right">
-              <small class="font-weight-lighter">Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago </small>
+            <div class="media-body mt-2 ml-4">
+              <div class="row">
+                <div class="col text-left">
+                  <h5 class="mb-1 text-capitalize"><%= @article.title%></h5>
+                </div>
+                <div class="col text-right">
+                  <small class="font-weight-lighter">Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago </small>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col text-left">
+                  <%= link_to "Edit", edit_article_path(@article)%> |  
+                  <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %> | 
+                  <%= link_to "Return to articles listing", articles_path %>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="row m-1 mt-2">
-            <div class="col text-left">
-              <%= link_to "Edit", edit_article_path(@article)%> |  
-              <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %> | 
-              <%= link_to "Return to articles listing", articles_path %>
-            </div>
-            <div class="col text-right">
-              <small class="font-weight-lighter">By <%= @article.user.username %></small>
-            </div>
-          </div>		
         </div>
-
-        <div class="card-body ml-5">
+        <div class="card-body ml-4">
           <%= simple_format(@article.description.capitalize)%>
         </div>
       </div>
