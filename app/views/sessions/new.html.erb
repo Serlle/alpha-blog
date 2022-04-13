@@ -3,7 +3,7 @@
   <div class="box-sign_up marquee--inner">
     <div class="row rounded-lg shadow justify-content-end">
       <div class="col m-4 text-center">
-        <%= form_with scope: :sessions, url: login_path, class: "text-left", local: true do |f| %>
+        <%= form_with scope: :session, url: login_path, class: "text-left", local: true do |f| %>
           <div class="form-group">
             <%= f.label :email, class: "col-form-label" %>
             <%= f.email_field :email, class: "form-control" %>
