@@ -1,7 +1,9 @@
 <h1 class= "text-center font-weight-bold m-4"><%= @user.username %>'s Profile</h1>
 <%= gravatar_for(@user, size: 150) %> <!-- El estilo va dentro del helper --> <br>
 <div class="text-center mt-4">
-  <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info " %> <!-- Automaticamente rails sabe a donde renderizar. Toma el id del usuario con el simple echo de poner @user -->
+  <% if logged_in? && @user == current_user %> 
+    <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info " %> <!-- Automaticamente rails sabe a donde renderizar. Toma el id del usuario con el simple echo de poner @user -->
+  <% end %>  
 </div>
 <h3 class="text-center mt-4">Articles</h3> <br>
 <div class="flickr_pagination mb-4">
