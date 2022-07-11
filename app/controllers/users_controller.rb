@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update]
+before_action :require_user, only: [:edit, :update]
+before_action :require_same_user, only: [:edit, :update]
 
   def show
     @articles = @user.articles.paginate(page: params[:page], per_page: 5)
@@ -29,7 +31,7 @@ before_action :set_user, only: [:show, :edit, :update]
 
   def update
     if @user.update(user_params)
-      flash[:notice] = "Your account information was successfully updated"
+      flash[:notice] = "Your acco unt information was successfully updated"
       redirect_to @user #Recuerde que esto (@user) es la abreviatura de la ruta de usuario que requiere de un objeto de usuario.
     else
       render 'edit'
@@ -46,4 +48,10 @@ before_action :set_user, only: [:show, :edit, :update]
     params.require(:user).permit(:username, :email, :password)
   end
 
+  def require_same_user
+    if current_user != @user
+      flash[:alert] = "You can only edit or delete your own user"
+      redirect_to @user
+    end
+  end
 end
