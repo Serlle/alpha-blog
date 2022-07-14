@@ -142,3 +142,23 @@
       margin-right: 1em; }
     .flickr_pagination .next_page {
       margin-left: 1em; }
+
+      /* Hover to delete button */ 
+      .delete_button {
+        display: block;
+        width: 100%;
+        padding: 0.25rem 1.5rem;
+        clear: both;
+        font-weight: 400;
+        color: red;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+      }
+      
+      .delete_button:hover {
+        background-color: red;
+        color: white;
+        text-decoration: none;
+      }
