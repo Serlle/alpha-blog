@@ -1,0 +1,24 @@
+<h1 class= "text-center font-weight-bold m-4">Categories</h1><br>
+
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @categories, :container => false %>
+</div>
+
+<div class= "container marquee mb-4">
+  <div class="accordion marquee--inner" id="accordionExample">
+    <% @categories.each do |category| %>
+      <div class="card shadow">
+        <div class="card-header">
+          <div class="row m-1">
+            <div class="col text-left">
+              <h5 class="mb-1 text-capitalize"><%= link_to category.name, category_path(category) %></h5>
+            </div>
+            <div class="col text-right">
+              <small class="font-weight-lighter">Created <%= time_ago_in_words(category.created_at) %> ago, edited <%= time_ago_in_words(category.updated_at) %> ago </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
