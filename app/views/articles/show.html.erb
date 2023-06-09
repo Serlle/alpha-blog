@@ -29,6 +29,11 @@
                   <% end %> 
                   <%= link_to "Return to articles listing", articles_path %>
                 </div>
+                <div class="col text-right">
+                  <% if @article.categories.any? %>
+                    <%= render @article.categories %>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>

@@ -12,6 +12,7 @@
           <div class="row m-1">
             <div class="col text-left">
               <h5 class="mb-1 text-capitalize"><%= link_to category.name, category_path(category) %></h5>
+              <p class=""><%= pluralize(category.article.count, "article") %></p>
             </div>
             <div class="col text-right">
               <small class="font-weight-lighter">Created <%= time_ago_in_words(category.created_at) %> ago, edited <%= time_ago_in_words(category.updated_at) %> ago </small>
